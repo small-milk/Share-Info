@@ -101,4 +101,28 @@ print(type(a))
 
 # 简易计算器
 
+```python
+ex = "否"  
+while ex == "否":  
+    a = int(input("a:"))  
+    b = int(input("b:"))  
+    flag = input("flag:")  
+  
+    if flag == "+":  
+        result = a + b  
+    elif flag == "-":  
+        result = a - b  
+    elif flag == "*":  
+        result = a * b  
+    elif flag == "/":  
+        result = a / b  
+    elif flag == "**":  
+        result = a ** b  
+    else:  
+        print("你输的不对!!!")  
+  
+    print(result)  
+    ex = input("是否要退出:")
+```
+
 # 完整计算器
