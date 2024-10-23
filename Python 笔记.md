@@ -314,4 +314,24 @@ class 类名(要继承的类1,类2)
 
 ## 重写? 重载? 
 
+孩子不希望按照父辈的方式行事, 对同一个事情的处理决定用自己的方式处理.
+
+在子类里重现父类的方法并重新写逻辑
+
+### 声明方式
+
+```python
+class Parent:
+    def show(self):
+        print("Parent class method")
+
+class Child(Parent):
+    def show(self):
+        print("Child class method")
+
+# 使用示例
+obj = Child()
+obj.show()  # 输出: Child class method
+```
+
 
