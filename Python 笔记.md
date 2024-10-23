@@ -126,3 +126,144 @@ while ex == "否":
 ```
 
 # 完整计算器
+
+```python
+import tkinter as tk  
+  
+allowSampleSign = ("+","-","**","//","*","/","%")  
+allowSign = ("^","&","<<",">>")  
+  
+root = tk.Tk()  
+  
+  
+# 设置窗口大小  
+window_width = 800  
+window_height = 600  
+root.geometry(f"{window_width}x{window_height}")  
+  
+# 获取屏幕的宽度和高度  
+screen_width = root.winfo_screenwidth()  
+screen_height = root.winfo_screenheight()  
+  
+# 计算窗口的居中位置  
+x = (screen_width // 2) - (window_width // 2)  
+y = (screen_height // 2) - (window_height // 2)  
+  
+# 设置窗口位置  
+root.geometry(f"{window_width}x{window_height}+{x}+{y}")  
+root.title( "计算器")  
+root.wm_attributes("-type", "dialog")  
+  
+def calcresult(content:str):  
+    result = eval(content)  
+    result_area.delete("1.0", tk.END)  
+    result_area.insert(tk.END, result)  
+  
+def on_key_press(event):  
+    content = text_area.get("1.0", tk.END)  
+    if content.endswith("\n"):  
+        content = content[:-1]  
+    if not content.strip() and (event.char in allowSampleSign or event.char in allowSign) :  
+        return "break"  
+  
+    if (event.char in allowSampleSign or event.char in allowSign) and (content[-1] in allowSampleSign or content[-1] in allowSign) :  
+        return "break"  
+    if event.keysym == "Return":  
+        if(content[-1] in allowSign or content[-1] in allowSampleSign):  
+            return "break"  
+        else :  
+            calcresult(content)  
+    if not (event.char.isdigit() or event.char == "." or event.keysym == "BackSpace" or event.char in allowSampleSign or event.char in allowSign):  
+        return "break"  
+  
+text_area = tk.Text(root,height=10 , width=80)  
+text_area.pack()  
+text_area.bind("<KeyPress>", on_key_press)  
+result_area = tk.Text(root,height=2 , width=10)  
+result_area.place(x=600, y=100)  
+def show_text(sign:str):  
+    result = 0  
+    if "=" == sign:  
+        content = text_area.get("1.0", tk.END)  
+        if content.endswith("\n"):  
+            content = content[:-1]  
+  
+        calcresult(content)  
+  
+    else:  
+        content = text_area.get("1.0", tk.END)  
+        if content.endswith("\n"):  
+            content = content[:-1]  
+        if not content.strip() :  
+            return  
+        if content[-1] in allowSampleSign or content[-1] in allowSign:  
+            return  
+        else :  
+            content += sign  
+            text_area.insert(tk.END, sign)  
+  
+sample_frame = tk.Frame(root)  
+# sample_frame.pack(side=tk.TOP, fill=tk.BOTH,expand=True)  
+# sample_frame.pack_forget()  
+def create_sample_calc():  
+    line_index = 1  
+    col_index = 1  
+    for sign in allowSampleSign:  
+        button = tk.Button(sample_frame,text=sign,command=lambda t=sign: show_text(t))  
+        button.place(x=150 * col_index, y=150 +50* line_index)  
+        if col_index > 3:  
+            col_index = 0  
+            line_index += 1  
+  
+        col_index += 1  
+    else:  
+  
+        button = tk.Button(sample_frame, text="=",command=lambda : show_text("="))  
+        button.pack()  
+        button.place(x=150 * col_index, y=150 + 50 * line_index)  
+    return  
+calc_frame = tk.Frame(root)  
+# calc_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)  
+# calc_frame.pack_forget()  
+def create_calc():  
+    line_index = 1  
+    col_index = 1  
+  
+    for sign in allowSign:  
+        button = tk.Button(calc_frame, text=sign,command=lambda t=sign: show_text(t))  
+        button.place(x=150 * col_index, y=150 + 50 * line_index)  
+        if col_index > 3:  
+            col_index = 0  
+            line_index += 1  
+  
+        col_index += 1  
+    else:  
+  
+        button = tk.Button(calc_frame, text="=",command=lambda : show_text("="))  
+        button.pack()  
+        button.place(x=150 * col_index, y=150 + 50 * line_index)  
+    return  
+  
+  
+def show_sample_calc():  
+  
+    calc_frame.pack_forget()  
+    sample_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)  
+  
+  
+def show_calc():  
+    calc_frame.pack(side=tk.TOP, fill=tk.BOTH, expand=True)  
+    sample_frame.pack_forget()  
+  
+sampleButton=tk.Button(root,text="数学计算器",command=show_sample_calc)  
+sampleButton.place(x=10,y=10)  
+calcButton = tk.Button(root,text="复杂计算器",command=show_calc)  
+calcButton.place(x=10,y=50)  
+  
+create_sample_calc()  
+create_calc()  
+root.mainloop()
+```
+
+
+# 
