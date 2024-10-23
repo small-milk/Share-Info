@@ -289,6 +289,34 @@ def 方法名 (参数) -> 返回:
 
 class 类名
 
+```python
+
+#Test.py
+
+class Calc:  
+    def xplusy (self,x,y):  
+        print(x + y)  
+  
+    def xsubtracty (self,x,y):  
+        print(x - y )  
+  
+  
+    def xmultiplyy (self,x6,y):  
+        print(x6 * y)  
+        self.xsubtracty(x6, y)   
+  
+  
+class Alive:  
+  
+    def drink(self):  
+        print("smk drink")
+
+#Sleep.py
+import com.smk.test.component.Test as t  
+  
+calc = t.Calc()
+
+```
 
 # 封装? 继承? 面向对象
 
