@@ -369,7 +369,7 @@ obj.show()  # 输出: Child class method
 
 ### 页面参考
 
-
+![[1.html]]
 
 
 ### 注册功能
