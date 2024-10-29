@@ -368,6 +368,6 @@ obj.show()  # 输出: Child class method
 ## 登录样例
 
 ```python
-class
+class 
 
 ```
