@@ -18,6 +18,14 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "38648e396d72da96",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
         ]
       }
@@ -157,8 +165,9 @@
   },
   "active": "8148555a4d64202e",
   "lastOpenFiles": [
-    "1.html",
+    "1 1.html",
     "README.md",
-    "Python 笔记.md"
+    "Python 笔记.md",
+    "1.html"
   ]
 }
