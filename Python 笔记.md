@@ -367,8 +367,12 @@ obj.show()  # 输出: Child class method
 
 ## 登录样例
 
+### 页面参考
 
-### 注册
+
+
+
+### 注册功能
 ```python
 
 class Register:  
@@ -392,15 +396,12 @@ class Register:
             self.re_flag = True  
             re_flag1 = "smkello"
 
-class Header:  
-   def create_header(self):  
-       return " Disney Website "
 
-class Footer:  
-    def create_footer(self):  
-        return "Please Contact Us"
+```
 
+### 登录区域
 
+```python
 class Login:  
     def create_login(self) -> ():  
         username = input("请输入手机号")  
@@ -423,8 +424,26 @@ class Login:
             self.create_login()
 
 
+```
+### Header 区域
+```python
+
+class Header:  
+   def create_header(self):  
+       return " Disney Website "
 
 ```
+
+### Footer 区域
+
+```python
+class Footer:  
+    def create_footer(self):  
+        return "Please Contact Us"
+
+```
+
+
 ### 首页
 首页布局由, Header, Footer, 注册区域, 登录区域 组成.
 ```python
