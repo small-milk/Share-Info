@@ -367,7 +367,102 @@ obj.show()  # 输出: Child class method
 
 ## 登录样例
 
-```python
-class 
 
+### 注册
+```python
+
+class Register:  
+    def __init__(self):  
+        pass  
+  
+    def create_register(self):  
+  
+        username = input("注册的手机号")  
+        pwd = input("注册的密码")  
+  
+        if(len(username) != 11):  
+  
+            print("请输入正确手机号")  
+            self.re_flag = False  
+            re_flag1 = "smk"  
+  
+        else:  
+  
+            print("注册成功")  
+            self.re_flag = True  
+            re_flag1 = "smkello"
+
+class Header:  
+   def create_header(self):  
+       return " Disney Website "
+
+class Footer:  
+    def create_footer(self):  
+        return "Please Contact Us"
+
+
+class Login:  
+    def create_login(self) -> ():  
+        username = input("请输入手机号")  
+        pwd = input("请输入密码")  
+        self.username = username  
+        self.pwd = pwd  
+  
+        self.login(username, pwd)  
+  
+  
+    def login(self, username, pwd):  
+  
+        def_username = "18347432461";  
+        def_pwd = "disney";  
+  
+        if(username == def_username and pwd == def_pwd):  
+            print("登录成功")  
+        else:  
+            print("用户名或者密码不正确,请重新输入")  
+            self.create_login()
+
+
+
+```
+### 首页
+首页布局由, Header, Footer, 注册区域, 登录区域 组成.
+```python
+from com.smk.test.component.index.Footer import Footer  
+from com.smk.test.component.index.Header import Header  
+from com.smk.test.component.index.Login import Login  
+from com.smk.test.component.index.Register import Register  
+  
+  
+class Index:  
+    def create_index(self):  
+        self._header = Header()  
+        header = self._header.create_header()  
+        print(header)  
+  
+        self._footer = Footer()  
+        footer = self._footer.create_footer()  
+        print(footer)  
+  
+        self.register()  
+  
+    def register(self):  
+  
+        self._register = Register()  
+        self._register.create_register()  
+  
+        if self._register.re_flag:  
+            print(self._register.re_flag)  
+            self._login = Login()  
+            self._login.create_login()  
+  
+        else:  
+  
+            self.register()  
+  
+  
+  
+  
+index = Index()  
+index.create_index()
 ```
