@@ -364,3 +364,10 @@ obj.show()  # 输出: Child class method
 
 
 # 下山
+
+## 登录样例
+
+```python
+class
+
+```
