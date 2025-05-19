@@ -46,18 +46,6 @@
             }
           },
           {
-            "id": "8eb0b1f9969a933d",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.7.7"
-              },
-              "icon": "lucide-file",
-              "title": "Release Notes 1.7.7"
-            }
-          },
-          {
             "id": "38648e396d72da96",
             "type": "leaf",
             "state": {
@@ -68,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -220,7 +208,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8eb0b1f9969a933d",
+  "active": "0574e3aa88da3ddc",
   "lastOpenFiles": [
     "1 1.html",
     "README.md",
